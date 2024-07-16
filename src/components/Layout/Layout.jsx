@@ -19,7 +19,7 @@ const Layout = () => {
         </main>
         <Footer activeLinks={activeLinks}/>
     </div>
-  )
-}
+  );
+};
 
 export default Layout
