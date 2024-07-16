@@ -4,12 +4,12 @@ const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
 
-    // set the state for the cartContext
+
     const [cartProducts, setCartProducts] = useState([]);
 
-    // create a function that adds items to the cart
+
     const addToCart = (item, quantity) => {
-        // search for existing products in the cartProducts array
+
         const existingProduct = cartProducts.find((cartProduct) => cartProduct.id === item.id)
 
         if (existingProduct) {
@@ -25,18 +25,16 @@ export const CartProvider = ({ children }) => {
         }
     }
 
-    // create a function to remove items from the cart
     const removeFromCart = (itemId) => {
         setCartProducts((prevCartProducts) => prevCartProducts.filter((cartProduct) => cartProduct.id !== itemId))
     }
 
-    // create a function to delete items from the cart
+    
     const clearCart = () => {
         setCartProducts([])
     }
 
-    // create a function to update the
-    // quantity of items in the cart
+    
     const updateQuantity = (itemId, newQuantity) => {
         setCartProducts((prevCartProducts) =>
             prevCartProducts.map((cartProduct) =>
